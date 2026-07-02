@@ -1,4 +1,4 @@
-# Akitu Polaczenia Plugin (QGIS)                                                                               <img width="70" height="70" alt="icon" src="https://github.com/user-attachments/assets/5c1ea8e9-12b2-41d2-a97a-69094a1d297b" />
+<img width="70" height="70" alt="icon" src="https://github.com/user-attachments/assets/5c1ea8e9-12b2-41d2-a97a-69094a1d297b" /> # Akitu Polaczenia Plugin (QGIS)
 
 Wtyczka QGIS do zarządzania połączeniami sieciowymi w PostgreSQL/PostGIS z użyciem dedykowanego formularza Qt Designer.
 
