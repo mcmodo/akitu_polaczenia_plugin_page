@@ -1,4 +1,5 @@
 <img width="70" height="70" alt="icon" src="https://github.com/user-attachments/assets/5c1ea8e9-12b2-41d2-a97a-69094a1d297b" />
+
 # Akitu Połączenia Plugin — Instrukcja użytkownika
  
 Szczegółowy opis formularza wtyczki „Akitu Polaczenia” dla QGIS: pasek narzędzi oraz każda z 7 zakładek połączeń światłowodowych. Dokument uzupełnia [README.md](README.md).
