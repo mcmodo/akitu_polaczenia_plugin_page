@@ -7,24 +7,24 @@ Szczegółowy opis formularza wtyczki „Akitu Polaczenia” dla QGIS: pasek nar
 ## Spis treści
 - [1. Wprowadzenie](#1-wprowadzenie)
 - [2. Wymagania i warstwy wymagane](#2-wymagania-i-warstwy-wymagane)
-- [3. Pasek narzędzi formularza](#3-pasek-narzędzi-formularza)
-- [4. Zakładka: Włókno–Włókno](#4-zakładka-włókno–włókno)
-- [5. Zakładka: Splitter (Włókno/Pigtail–Splitter)](#5-zakładka-splitter-włóknopigtail–splitter)
-- [6. Zakładka: Włókno–Pigtail](#6-zakładka-włókno–pigtail)
-- [7. Zakładka: Pigtail–Pigtail](#7-zakładka-pigtail–pigtail)
-- [8. Zakładka: Pigtail–Włókno](#8-zakładka-pigtail–włókno)
-- [9. Zakładka: Pigtail–Device](#9-zakładka-pigtail–device)
-- [10. Zakładka: Device–Device](#10-zakładka-device–device)
-- [11. Wspólne zasady walidacji i statusy](#11-wspólne-zasady-walidacji-i-statusy)
-- [12. Rozwiązywanie problemów](#12-rozwiązywanie-problemów)
+- [3. Pasek narzędzi formularza](#3-pasek-narzedzi-formularza)
+- [4. Zakładka: Włókno–Włókno](#4-zakladka-wlokno-wlokno)
+- [5. Zakładka: Splitter (Włókno/Pigtail–Splitter)](#5-zakladka-splitter-wloknopigtail-splitter)
+- [6. Zakładka: Włókno–Pigtail](#6-zakladka-wlokno-pigtail)
+- [7. Zakładka: Pigtail–Pigtail](#7-zakladka-pigtail-pigtail)
+- [8. Zakładka: Pigtail–Włókno](#8-zakladka-pigtail-wlokno)
+- [9. Zakładka: Pigtail–Device](#9-zakladka-pigtail-device)
+- [10. Zakładka: Device–Device](#10-zakladka-device-device)
+- [11. Wspólne zasady walidacji i statusy](#11-wspolne-zasady-walidacji-i-statusy)
+- [12. Rozwiązywanie problemów](#12-rozwiazywanie-problemow)
 ---
  
-## 1. Wprowadzenie
+## 1. Wprowadzenie {#1-wprowadzenie}
  
-Formularz wtyczki (`akitu_polaczenia.ui`) to jedno okno dialogowe z 7 zakładkami (`QTabWidget`). Każda zakładka odpowiada jednemu typowi połączenia fizycznego w sieci światłowodowej i zapisuje rekordy do osobnej tabeli w bazie PostgreSQL/PostGIS. Wszystkie zakładki działają w kontekście jednego, aktualnie wybranego **Punktu Elastyczności (PE)** — patrz [rozdział 3](#3-pasek-narzędzi-formularza).
+Formularz wtyczki (`akitu_polaczenia.ui`) to jedno okno dialogowe z 7 zakładkami (`QTabWidget`). Każda zakładka odpowiada jednemu typowi połączenia fizycznego w sieci światłowodowej i zapisuje rekordy do osobnej tabeli w bazie PostgreSQL/PostGIS. Wszystkie zakładki działają w kontekście jednego, aktualnie wybranego **Punktu Elastyczności (PE)** — patrz [rozdział 3](#3-pasek-narzedzi-formularza).
  
 
-## 2. Wymagania i warstwy wymagane
+## 2. Wymagania i warstwy wymagane {#2-wymagania-i-warstwy-wymagane}
  
 Przy starcie formularz sprawdza obecność w projekcie QGIS poniższych warstw wraz z wymaganymi polami (jeśli którejś brakuje, formularz się nie otworzy):
  
@@ -47,10 +47,10 @@ Przy starcie formularz sprawdza obecność w projekcie QGIS poniższych warstw w
 | `patchcord` | `patch_id`, `patch_name`, `patch_type`, `pe_id`, `patch_status` |
 | `spliter_wlokno_pigtail` | `swp_id`, `wl_id`, `pig_id`, `snr_id`, `pe_id`, `sp_id` |
  
-**[⬆ powrót do spisu treści](#spis-treści)**
+**[⬆ powrót do spisu treści](#spis-tresci)**
  
 
-## 3. Pasek narzędzi formularza
+## 3. Pasek narzędzi formularza {#3-pasek-narzedzi-formularza}
  
 Górna część okna, wspólna dla wszystkich zakładek:
  
@@ -65,10 +65,10 @@ Górna część okna, wspólna dla wszystkich zakładek:
  
 > Bez wskazania PE (`btnPickPE`) większość pól i przycisków `Apply` na zakładkach jest nieużywalna — formularz zwróci komunikat „Wskaż Punkt Elastyczności”.
  
-**[⬆ powrót do spisu treści](#spis-treści)**
+**[⬆ powrót do spisu treści](#spis-tresci)**
  
 
-## 4. Zakładka: Włókno–Włókno
+## 4. Zakładka: Włókno–Włókno {#4-zakladka-wlokno-wlokno}
  
 *Nazwa zakładki: „Włókno-Włókno” · obiekt `.ui`: `tabWW`*
  
@@ -89,10 +89,10 @@ Górna część okna, wspólna dla wszystkich zakładek:
  
 **Delete record (`btnWW_delete`):** usuwa zaznaczony rekord z tabeli `wlokno_wlokno`.
  
-**[⬆ powrót do spisu treści](#spis-treści)**
+**[⬆ powrót do spisu treści](#spis-tresci)**
  
 
-## 5. Zakładka: Splitter (Włókno/Pigtail–Splitter)
+## 5. Zakładka: Splitter (Włókno/Pigtail–Splitter) {#5-zakladka-splitter-wloknopigtail-splitter}
  
 *Nazwa zakładki: „Splitter” · obiekt `.ui`: `tabWS`*
  
@@ -111,10 +111,10 @@ Podłącza wejście splittera (`wl_nr = 0`) do włókna liniowego albo — jeśl
  
 **Delete record (`btnWS_delete`):** usuwa zaznaczony rekord z tabeli `spliter_wlokno_pigtail`.
  
-**[⬆ powrót do spisu treści](#spis-treści)**
+**[⬆ powrót do spisu treści](#spis-tresci)**
  
 
-## 6. Zakładka: Włókno–Pigtail
+## 6. Zakładka: Włókno–Pigtail {#6-zakladka-wlokno-pigtail}
  
 *Nazwa zakładki: „Włókno-Pigtail” · obiekt `.ui`: `tabWP`*
  
@@ -135,10 +135,10 @@ Podłącza wejście splittera (`wl_nr = 0`) do włókna liniowego albo — jeśl
  
 **Delete record (`btnWP_delete`):** usuwa zaznaczony rekord z tabeli `wlokno_pigtail`.
  
-**[⬆ powrót do spisu treści](#spis-treści)**
+**[⬆ powrót do spisu treści](#spis-tresci)**
  
 
-## 7. Zakładka: Pigtail–Pigtail
+## 7. Zakładka: Pigtail–Pigtail {#7-zakladka-pigtail-pigtail}
  
 *Nazwa zakładki: „Pigtail-Pigtail” · obiekt `.ui`: `tabPP`*
  
@@ -159,10 +159,10 @@ Podłącza wejście splittera (`wl_nr = 0`) do włókna liniowego albo — jeśl
  
 **Delete record (`btnPP_delete`):** usuwa zaznaczony rekord z tabeli `pigtail_pigtail`.
  
-**[⬆ powrót do spisu treści](#spis-treści)**
+**[⬆ powrót do spisu treści](#spis-tresci)**
  
 
-## 8. Zakładka: Pigtail–Włókno
+## 8. Zakładka: Pigtail–Włókno {#8-zakladka-pigtail-wlokno}
  
 *Nazwa zakładki: „Pigtail-Włókno” · obiekt `.ui`: `tabPW`*
  
@@ -183,10 +183,10 @@ Odwrotność zakładki Włókno–Pigtail — łączy pigtail z włóknem liniow
  
 **Delete record (`btnPW_delete`):** usuwa zaznaczony rekord z tabeli `pigtail_wlokno`.
  
-**[⬆ powrót do spisu treści](#spis-treści)**
+**[⬆ powrót do spisu treści](#spis-tresci)**
 
  
-## 9. Zakładka: Pigtail–Device
+## 9. Zakładka: Pigtail–Device {#9-zakladka-pigtail-device}
  
 *Nazwa zakładki: „Pigtail-Device” · obiekt `.ui`: `tabPD`*
  
@@ -206,10 +206,10 @@ Podłącza pigtail bezpośrednio do portu urządzenia (`device`).
  
 **Delete record (`btnPD_delete`):** usuwa zaznaczony rekord z tabeli `pigtail_port`.
  
-**[⬆ powrót do spisu treści](#spis-treści)**
+**[⬆ powrót do spisu treści](#spis-tresci)**
 
  
-## 10. Zakładka: Device–Device
+## 10. Zakładka: Device–Device {#10-zakladka-device-device}
  
 *Nazwa zakładki: „Device-Device” · obiekt `.ui`: `tabDD`*
  
@@ -233,10 +233,10 @@ Podłącza pigtail bezpośrednio do portu urządzenia (`device`).
  
 **Delete record (`btnDD_delete`):** usuwa zaznaczony rekord z tabeli `device_device`.
  
-**[⬆ powrót do spisu treści](#spis-treści)**
+**[⬆ powrót do spisu treści](#spis-tresci)**
 
  
-## 11. Wspólne zasady walidacji i statusy
+## 11. Wspólne zasady walidacji i statusy {#11-wspolne-zasady-walidacji-i-statusy}
  
 - **Bieżące PE jest wymagane** dla każdej operacji zapisu — wskaż je przyciskiem `Wskaż Punkt Elastyczności na mapie`.
 - **Duplikaty są blokowane**: formularz sprawdza istniejące połączenia w obu kierunkach (A↔B oraz B↔A) w obrębie tego samego PE, zanim zapisze nowy rekord.
@@ -244,10 +244,10 @@ Podłącza pigtail bezpośrednio do portu urządzenia (`device`).
 - **Zajęte elementy nie znikają z formularza automatycznie** — po każdym `Apply` listy `QComboBox` są czyszczone (`_clear_comboboxes_after_apply`), a dane odświeżane (`refresh_data` / `update_all_table_views` / `populate_all_comboboxes`), by odzwierciedlić nowy stan.
 - **Błędy zapisu** (np. utrata połączenia z bazą, brak warstwy) są zgłaszane komunikatem i powodują wycofanie transakcji (`rollBack`) — żaden częściowy rekord nie zostaje zapisany.
   
-**[⬆ powrót do spisu treści](#spis-treści)**
+**[⬆ powrót do spisu treści](#spis-tresci)**
 
  
-## 12. Rozwiązywanie problemów
+## 12. Rozwiązywanie problemów {#12-rozwiazywanie-problemow}
  
 | Objaw | Prawdopodobna przyczyna | Rozwiązanie |
 |---|---|---|
@@ -258,7 +258,7 @@ Podłącza pigtail bezpośrednio do portu urządzenia (`device`).
 | „Wybrane porty/pigtail'e muszą mieć status …” | Element jest już zajęty (status inny niż wymagany, np. `wol`/`spaw`) | Wybierz inny, wolny element lub usuń kolidujące połączenie |
 | Przycisk `GitHub Docs` nic nie robi | Brak domyślnej przeglądarki w systemie lub blokada `QDesktopServices` | Otwórz ręcznie: `https://mcmodo.github.io/akitu_polaczenia_plugin_page/` |
  
-**[⬆ powrót do spisu treści](#spis-treści)**
+**[⬆ powrót do spisu treści](#spis-tresci)**
  
 ---
 Autor: **Karol Orzepowski**
