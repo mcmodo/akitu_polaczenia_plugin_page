@@ -24,7 +24,7 @@ Szczegółowy opis formularza wtyczki „Akitu Polaczenia” dla QGIS: pasek nar
 Formularz wtyczki (`akitu_polaczenia.ui`) to jedno okno dialogowe z 7 zakładkami (`QTabWidget`). Każda zakładka odpowiada jednemu typowi połączenia fizycznego w sieci światłowodowej i zapisuje rekordy do osobnej tabeli w bazie PostgreSQL/PostGIS. Wszystkie zakładki działają w kontekście jednego, aktualnie wybranego **Punktu Elastyczności (PE)** — patrz [rozdział 3](#3-pasek-narzedzi-formularza).
  
 
-## 2. Wymagania i warstwy wymagane {#2-wymagania-i-warstwy-wymagane}
+## 2. Wymagania i warstwy wymagane 
  
 Przy starcie formularz sprawdza obecność w projekcie QGIS poniższych warstw wraz z wymaganymi polami (jeśli którejś brakuje, formularz się nie otworzy):
  
@@ -50,7 +50,7 @@ Przy starcie formularz sprawdza obecność w projekcie QGIS poniższych warstw w
 **[⬆ powrót do spisu treści](#spis-tresci)**
  
 
-## 3. Pasek narzędzi formularza {#3-pasek-narzedzi-formularza}
+## 3. Pasek narzędzi formularza
  
 Górna część okna, wspólna dla wszystkich zakładek:
  
@@ -68,7 +68,7 @@ Górna część okna, wspólna dla wszystkich zakładek:
 **[⬆ powrót do spisu treści](#spis-tresci)**
  
 
-## 4. Zakładka: Włókno–Włókno {#4-zakladka-wlokno-wlokno}
+## 4. Zakładka: Włókno–Włókno
  
 *Nazwa zakładki: „Włókno-Włókno” · obiekt `.ui`: `tabWW`*
  
@@ -92,7 +92,7 @@ Górna część okna, wspólna dla wszystkich zakładek:
 **[⬆ powrót do spisu treści](#spis-tresci)**
  
 
-## 5. Zakładka: Splitter (Włókno/Pigtail–Splitter) {#5-zakladka-splitter-wloknopigtail-splitter}
+## 5. Zakładka: Splitter (Włókno/Pigtail–Splitter)
  
 *Nazwa zakładki: „Splitter” · obiekt `.ui`: `tabWS`*
  
@@ -114,7 +114,7 @@ Podłącza wejście splittera (`wl_nr = 0`) do włókna liniowego albo — jeśl
 **[⬆ powrót do spisu treści](#spis-tresci)**
  
 
-## 6. Zakładka: Włókno–Pigtail {#6-zakladka-wlokno-pigtail}
+## 6. Zakładka: Włókno–Pigtail
  
 *Nazwa zakładki: „Włókno-Pigtail” · obiekt `.ui`: `tabWP`*
  
@@ -138,7 +138,7 @@ Podłącza wejście splittera (`wl_nr = 0`) do włókna liniowego albo — jeśl
 **[⬆ powrót do spisu treści](#spis-tresci)**
  
 
-## 7. Zakładka: Pigtail–Pigtail {#7-zakladka-pigtail-pigtail}
+## 7. Zakładka: Pigtail–Pigtail
  
 *Nazwa zakładki: „Pigtail-Pigtail” · obiekt `.ui`: `tabPP`*
  
@@ -162,7 +162,7 @@ Podłącza wejście splittera (`wl_nr = 0`) do włókna liniowego albo — jeśl
 **[⬆ powrót do spisu treści](#spis-tresci)**
  
 
-## 8. Zakładka: Pigtail–Włókno {#8-zakladka-pigtail-wlokno}
+## 8. Zakładka: Pigtail–Włókno
  
 *Nazwa zakładki: „Pigtail-Włókno” · obiekt `.ui`: `tabPW`*
  
@@ -186,7 +186,7 @@ Odwrotność zakładki Włókno–Pigtail — łączy pigtail z włóknem liniow
 **[⬆ powrót do spisu treści](#spis-tresci)**
 
  
-## 9. Zakładka: Pigtail–Device {#9-zakladka-pigtail-device}
+## 9. Zakładka: Pigtail–Device
  
 *Nazwa zakładki: „Pigtail-Device” · obiekt `.ui`: `tabPD`*
  
@@ -209,7 +209,7 @@ Podłącza pigtail bezpośrednio do portu urządzenia (`device`).
 **[⬆ powrót do spisu treści](#spis-tresci)**
 
  
-## 10. Zakładka: Device–Device {#10-zakladka-device-device}
+## 10. Zakładka: Device–Device
  
 *Nazwa zakładki: „Device-Device” · obiekt `.ui`: `tabDD`*
  
@@ -236,7 +236,7 @@ Podłącza pigtail bezpośrednio do portu urządzenia (`device`).
 **[⬆ powrót do spisu treści](#spis-tresci)**
 
  
-## 11. Wspólne zasady walidacji i statusy {#11-wspolne-zasady-walidacji-i-statusy}
+## 11. Wspólne zasady walidacji i statusy
  
 - **Bieżące PE jest wymagane** dla każdej operacji zapisu — wskaż je przyciskiem `Wskaż Punkt Elastyczności na mapie`.
 - **Duplikaty są blokowane**: formularz sprawdza istniejące połączenia w obu kierunkach (A↔B oraz B↔A) w obrębie tego samego PE, zanim zapisze nowy rekord.
@@ -247,7 +247,7 @@ Podłącza pigtail bezpośrednio do portu urządzenia (`device`).
 **[⬆ powrót do spisu treści](#spis-tresci)**
 
  
-## 12. Rozwiązywanie problemów {#12-rozwiazywanie-problemow}
+## 12. Rozwiązywanie problemów
  
 | Objaw | Prawdopodobna przyczyna | Rozwiązanie |
 |---|---|---|
