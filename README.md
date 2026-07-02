@@ -243,6 +243,7 @@ Podłącza pigtail bezpośrednio do portu urządzenia (`device`).
 - **Statusy elementów** (`wl_status`, `pig_status`, `por_status`, `snr_status`, `patch_status`) są aktualizowane automatycznie po udanym `Apply`. Najczęściej spotykane wartości: `wol` (wolny/dostępny), `zaj` (zajęty), `spaw` (zaspawany/podłączony pigtail).
 - **Zajęte elementy nie znikają z formularza automatycznie** — po każdym `Apply` listy `QComboBox` są czyszczone (`_clear_comboboxes_after_apply`), a dane odświeżane (`refresh_data` / `update_all_table_views` / `populate_all_comboboxes`), by odzwierciedlić nowy stan.
 - **Błędy zapisu** (np. utrata połączenia z bazą, brak warstwy) są zgłaszane komunikatem i powodują wycofanie transakcji (`rollBack`) — żaden częściowy rekord nie zostaje zapisany.
+  
 **[⬆ powrót do spisu treści](#spis-treści)**
 
  
