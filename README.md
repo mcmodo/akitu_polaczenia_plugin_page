@@ -2,7 +2,7 @@
 
 # Akitu Połączenia Plugin — Instrukcja użytkownika
  
-Szczegółowy opis formularza wtyczki „Akitu Polaczenia” dla QGIS: pasek narzędzi oraz każda z 7 zakładek połączeń światłowodowych. Dokument uzupełnia [README.md](README.md).
+Szczegółowy opis formularza wtyczki „Akitu Polaczenia” dla QGIS: pasek narzędzi oraz każda z 7 zakładek połączeń światłowodowych.
  
 ## Spis treści
 - [1. Wprowadzenie](#1-wprowadzenie)
@@ -23,6 +23,7 @@ Szczegółowy opis formularza wtyczki „Akitu Polaczenia” dla QGIS: pasek nar
  
 Formularz wtyczki (`akitu_polaczenia.ui`) to jedno okno dialogowe z 7 zakładkami (`QTabWidget`). Każda zakładka odpowiada jednemu typowi połączenia fizycznego w sieci światłowodowej i zapisuje rekordy do osobnej tabeli w bazie PostgreSQL/PostGIS. Wszystkie zakładki działają w kontekście jednego, aktualnie wybranego **Punktu Elastyczności (PE)** — patrz [rozdział 3](#3-pasek-narzędzi-formularza).
  
+
 ## 2. Wymagania i warstwy wymagane
  
 Przy starcie formularz sprawdza obecność w projekcie QGIS poniższych warstw wraz z wymaganymi polami (jeśli którejś brakuje, formularz się nie otworzy):
@@ -48,6 +49,7 @@ Przy starcie formularz sprawdza obecność w projekcie QGIS poniższych warstw w
  
 **[⬆ powrót do spisu treści](#spis-treści)**
  
+
 ## 3. Pasek narzędzi formularza
  
 Górna część okna, wspólna dla wszystkich zakładek:
@@ -65,6 +67,7 @@ Górna część okna, wspólna dla wszystkich zakładek:
  
 **[⬆ powrót do spisu treści](#spis-treści)**
  
+
 ## 4. Zakładka: Włókno–Włókno
  
 *Nazwa zakładki: „Włókno-Włókno” · obiekt `.ui`: `tabWW`*
@@ -88,6 +91,7 @@ Górna część okna, wspólna dla wszystkich zakładek:
  
 **[⬆ powrót do spisu treści](#spis-treści)**
  
+
 ## 5. Zakładka: Splitter (Włókno/Pigtail–Splitter)
  
 *Nazwa zakładki: „Splitter” · obiekt `.ui`: `tabWS`*
@@ -109,6 +113,7 @@ Podłącza wejście splittera (`wl_nr = 0`) do włókna liniowego albo — jeśl
  
 **[⬆ powrót do spisu treści](#spis-treści)**
  
+
 ## 6. Zakładka: Włókno–Pigtail
  
 *Nazwa zakładki: „Włókno-Pigtail” · obiekt `.ui`: `tabWP`*
@@ -132,6 +137,7 @@ Podłącza wejście splittera (`wl_nr = 0`) do włókna liniowego albo — jeśl
  
 **[⬆ powrót do spisu treści](#spis-treści)**
  
+
 ## 7. Zakładka: Pigtail–Pigtail
  
 *Nazwa zakładki: „Pigtail-Pigtail” · obiekt `.ui`: `tabPP`*
@@ -155,6 +161,7 @@ Podłącza wejście splittera (`wl_nr = 0`) do włókna liniowego albo — jeśl
  
 **[⬆ powrót do spisu treści](#spis-treści)**
  
+
 ## 8. Zakładka: Pigtail–Włókno
  
 *Nazwa zakładki: „Pigtail-Włókno” · obiekt `.ui`: `tabPW`*
@@ -177,6 +184,7 @@ Odwrotność zakładki Włókno–Pigtail — łączy pigtail z włóknem liniow
 **Delete record (`btnPW_delete`):** usuwa zaznaczony rekord z tabeli `pigtail_wlokno`.
  
 **[⬆ powrót do spisu treści](#spis-treści)**
+
  
 ## 9. Zakładka: Pigtail–Device
  
@@ -199,6 +207,7 @@ Podłącza pigtail bezpośrednio do portu urządzenia (`device`).
 **Delete record (`btnPD_delete`):** usuwa zaznaczony rekord z tabeli `pigtail_port`.
  
 **[⬆ powrót do spisu treści](#spis-treści)**
+
  
 ## 10. Zakładka: Device–Device
  
@@ -225,6 +234,7 @@ Podłącza pigtail bezpośrednio do portu urządzenia (`device`).
 **Delete record (`btnDD_delete`):** usuwa zaznaczony rekord z tabeli `device_device`.
  
 **[⬆ powrót do spisu treści](#spis-treści)**
+
  
 ## 11. Wspólne zasady walidacji i statusy
  
@@ -234,6 +244,7 @@ Podłącza pigtail bezpośrednio do portu urządzenia (`device`).
 - **Zajęte elementy nie znikają z formularza automatycznie** — po każdym `Apply` listy `QComboBox` są czyszczone (`_clear_comboboxes_after_apply`), a dane odświeżane (`refresh_data` / `update_all_table_views` / `populate_all_comboboxes`), by odzwierciedlić nowy stan.
 - **Błędy zapisu** (np. utrata połączenia z bazą, brak warstwy) są zgłaszane komunikatem i powodują wycofanie transakcji (`rollBack`) — żaden częściowy rekord nie zostaje zapisany.
 **[⬆ powrót do spisu treści](#spis-treści)**
+
  
 ## 12. Rozwiązywanie problemów
  
