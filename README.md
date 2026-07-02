@@ -5,7 +5,6 @@
 Szczegółowy opis formularza wtyczki „Akitu Polaczenia” dla QGIS: pasek narzędzi oraz każda z 7 zakładek połączeń światłowodowych. Dokument uzupełnia [README.md](README.md).
  
 ## Spis treści
- 
 - [1. Wprowadzenie](#1-wprowadzenie)
 - [2. Wymagania i warstwy wymagane](#2-wymagania-i-warstwy-wymagane)
 - [3. Pasek narzędzi formularza](#3-pasek-narzędzi-formularza)
